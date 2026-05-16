@@ -57,8 +57,8 @@ Durante la instalación:
 ### 3. Instalar dependencias adicionales
 
 ```bash
-sudo pacman -S zsh micro brightnessctl fastfetch v4l2loopback-dkms
-yay -S spotify iriunwebcam-bin brave-bin
+sudo pacman -S zsh micro brightnessctl fastfetch v4l2loopback-dkms lazygit
+yay -S spotify iriunwebcam-bin brave-bin antigravity
 ```
 
 Instalar Spicetify:
@@ -95,7 +95,27 @@ sudo systemctl enable --now systemd-timesyncd
 
 ---
 
-### 6. Agregar Windows al GRUB (dual boot)
+### 6. Configurar firewall (UFW)
+
+```bash
+sudo pacman -S ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow in on tailscale0
+sudo ufw enable
+sudo systemctl enable ufw
+```
+
+Para abrir un puerto específico cuando se necesite:
+```bash
+sudo ufw allow 3000   # ejemplo: servidor Node.js
+sudo ufw deny 3000    # para cerrarlo de nuevo
+```
+
+---
+
+### 7. Agregar Windows al GRUB (dual boot)
 
 ```bash
 sudo pacman -S os-prober
@@ -106,10 +126,18 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ---
 
-### 7. Cargar módulo de webcam al inicio
+
+### 8. Instalar bases de datos (desarrollo)
 
 ```bash
-echo "v4l2loopback" | sudo tee /etc/modules-load.d/v4l2loopback.conf
+# PostgreSQL
+sudo pacman -S postgresql
+sudo -u postgres initdb -D /var/lib/postgres/data
+sudo systemctl enable --now postgresql
+
+# MongoDB
+yay -S mongodb-bin
+sudo systemctl enable --now mongodb
 ```
 
 ---
