@@ -6,7 +6,7 @@ Setup personal basado en [ilyamiro/imperative-dots](https://github.com/ilyamiro/
 
 ## 📸 Preview
 
-> Hyprland + Kitty + Fastfetch con Luffy + tema naranja/gris
+> Hyprland + Kitty + Fastfetch con Luffy Gear 5 + tema morado/blanco
 
 ---
 
@@ -82,6 +82,7 @@ cp -r dotfiles/kitty ~/.config/
 cp -r dotfiles/fastfetch ~/.config/
 cp -r dotfiles/fish ~/.config/
 cp dotfiles/luffy.png ~/Pictures/
+cp dotfiles/Monkey-D-Luffy-Gear-5-PNG.png ~/Pictures/
 ```
 
 ---
@@ -166,11 +167,13 @@ sudo systemctl enable --now mongodb
 
 ## 🎨 Personalización aplicada
 
-- Colores naranja (`#ff6600`) en prompt, fetch y bordes de ventana
-- Imagen de Luffy como logo en fastfetch
+- Borde de ventana activa en Hyprland: blanco sólido (`#ffffff`)
+- Prompt de fish en tonos morados (`fish_color_user`, `_host`, `_cwd`, `_cwd_root`)
+- Texto normal/argumentos en blanco (`fish_color_normal`, `_param`, `_quote`); comandos y rutas válidas en morado (`fish_color_command`, `_valid_path`); comandos inválidos en rojo real (`fish_color_error`)
+- Carpetas, symlinks y ejecutables en tonos morados via `LS_COLORS`
+- Imagen de Luffy Gear 5 como logo en fastfetch, con etiquetas (`title`/`keys`/`separator`) en distintos tonos de morado
 - Tema blanco/gris en widgets de Quickshell (`qs_colors.json`)
 - Fondo de kitty `#1e1e1e` con opacidad `0.65`
-- Carpetas en naranja via `LS_COLORS`
 - Tema Persona 5 Royal en GRUB
 
 ---

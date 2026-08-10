@@ -2,13 +2,15 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
     "type": "kitty",
-    "source": "/home/steven/Pictures/luffy.png",
+    "source": "/home/steven/Pictures/Monkey-D-Luffy-Gear-5-PNG.png",
     "width": 30,
     "height": 16
   },
   "display": {
     "color": {
-      "keys": "33"
+      "title": "#d9a3ff",
+      "keys": "#9d4edd",
+      "separator": "#6c5b7b"
     }
   },
   "modules": [
