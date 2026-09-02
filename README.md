@@ -1,6 +1,27 @@
-# 🏴‍☠️ Steven's Dotfiles — Arch Linux + Hyprland
+<div align="center">
 
-Setup personal basado en [ilyamiro/imperative-dots](https://github.com/ilyamiro/imperative-dots) con personalizaciones propias.
+# 🏴‍☠️ Steven's Dotfiles
+
+**Arch Linux + Hyprland**, basado en [ilyamiro/imperative-dots](https://github.com/ilyamiro/imperative-dots) con personalizaciones propias.
+
+![Arch Linux](https://img.shields.io/badge/OS-Arch%20Linux-1793D1?logo=archlinux&logoColor=white)
+![Hyprland](https://img.shields.io/badge/WM-Hyprland-58E1FF?logo=wayland&logoColor=white)
+![Fish](https://img.shields.io/badge/Shell-Fish-34C88C?logo=gnubash&logoColor=white)
+![Kitty](https://img.shields.io/badge/Terminal-Kitty-C7C2EA)
+
+</div>
+
+---
+
+## 📑 Índice
+
+- [Preview](#-preview)
+- [Sistema](#️-sistema)
+- [Estructura del repo](#-estructura-del-repo)
+- [Instalación desde cero](#️-instalación-desde-cero)
+- [Keybinds](#️-keybinds)
+- [Personalización aplicada](#-personalización-aplicada)
+- [Actualizar dotfiles](#-actualizar-dotfiles)
 
 ---
 
@@ -24,6 +45,27 @@ Setup personal basado en [ilyamiro/imperative-dots](https://github.com/ilyamiro/
 
 ---
 
+## 📁 Estructura del repo
+
+```
+dotfiles/
+├── hypr/                  # Hyprland (Lua)
+│   ├── hyprland.lua        # entrypoint, hace require() de config/
+│   └── config/
+│       ├── keybinds.lua    # todos los atajos
+│       ├── settings.lua    # general, decoration, input, animaciones
+│       ├── variables.lua   # mainMod, terminal
+│       ├── env.lua
+│       ├── autostart.lua
+│       └── monitors.lua
+├── kitty/                  # terminal (opacidad, colores matugen, shell fish forzado)
+├── fastfetch/               # logo Luffy + paleta morada
+├── fish/                    # shell config + fisher, z, fzf, sponge
+└── *.png                    # wallpapers/imágenes usadas por fastfetch
+```
+
+---
+
 ## ⚙️ Instalación desde cero
 
 ### 1. Instalar Arch Linux base con archinstall
@@ -33,8 +75,6 @@ archinstall
 ```
 
 Perfil recomendado: **minimal** o **Hyprland** directo.
-
----
 
 ### 2. Instalar el rice base (ilyamiro)
 
@@ -48,11 +88,9 @@ Durante la instalación:
 - Configurar drivers **NVIDIA** si aplica
 - Ingresar API key de OpenWeatherMap cuando se solicite
 
-> La API key gratuita se obtiene en https://openweathermap.org/api
+> 🔑 La API key gratuita se obtiene en https://openweathermap.org/api
 
-> El instalador base trae Hyprland con config en **Lua** y la barra **Serpantinum** (ya no Quickshell). No instala Fish por defecto.
-
----
+> ℹ️ El instalador base trae Hyprland con config en **Lua** y la barra **Serpantinum** (ya no Quickshell). No instala Fish por defecto.
 
 ### 3. Instalar Fish y dependencias adicionales
 
@@ -73,8 +111,6 @@ sudo chmod a+wr /opt/spotify/Apps -R
 spicetify backup apply
 ```
 
----
-
 ### 4. Aplicar dotfiles personalizados
 
 ```bash
@@ -87,7 +123,8 @@ cp dotfiles/luffy.png ~/Pictures/
 cp dotfiles/Monkey-D-Luffy-Gear-5-PNG.png ~/Pictures/
 ```
 
----
+<details>
+<summary><b>5-8. Pasos opcionales</b> (zona horaria, firewall, dual boot, bases de datos)</summary>
 
 ### 5. Configurar zona horaria y sincronización
 
@@ -95,8 +132,6 @@ cp dotfiles/Monkey-D-Luffy-Gear-5-PNG.png ~/Pictures/
 sudo timedatectl set-timezone America/Costa_Rica
 sudo systemctl enable --now systemd-timesyncd
 ```
-
----
 
 ### 6. Configurar firewall (UFW)
 
@@ -116,8 +151,6 @@ sudo ufw allow 3000   # ejemplo: servidor Node.js
 sudo ufw deny 3000    # para cerrarlo de nuevo
 ```
 
----
-
 ### 7. Agregar Windows al GRUB (dual boot)
 
 ```bash
@@ -126,9 +159,6 @@ sudo nano /etc/default/grub
 # Descomentar: GRUB_DISABLE_OS_PROBER=false
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
-
----
-
 
 ### 8. Instalar bases de datos (desarrollo)
 
@@ -143,13 +173,15 @@ yay -S mongodb-bin
 sudo systemctl enable --now mongodb
 ```
 
+</details>
+
 ---
 
-## ⌨️ Keybinds (todas)
+## ⌨️ Keybinds
 
-Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
+Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = tecla Meta/Windows.
 
-**Ventanas**
+#### Ventanas
 
 | Atajo | Acción |
 |---|---|
@@ -164,7 +196,7 @@ Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
 | `Super + click der + arrastrar` | Redimensionar ventana |
 | Gesto 3 dedos horizontal (trackpad) | Cambiar workspace |
 
-**Apps**
+#### Apps
 
 | Atajo | Acción |
 |---|---|
@@ -172,7 +204,7 @@ Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
 | `Super + B` | Brave |
 | `Super + E` | Gestor de archivos (Nautilus) |
 
-**Panel / Serpantinum**
+#### Panel / Serpantinum
 
 | Atajo | Acción |
 |---|---|
@@ -187,14 +219,14 @@ Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
 | `Super + V` | Toggle volumen |
 | `Super + H` | Toggle guía de keybinds |
 
-**Workspaces**
+#### Workspaces
 
 | Atajo | Acción |
 |---|---|
 | `Super + 1..9, 0` | Ir a workspace 1–10 |
 | `Super + Shift + 1..9, 0` | Mover ventana activa a workspace 1–10 |
 
-**Sistema / multimedia**
+#### Sistema / multimedia
 
 | Atajo | Acción |
 |---|---|
@@ -217,7 +249,7 @@ Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
 
 - Prompt de fish en tonos morados (`fish_color_user`, `_host`, `_cwd`, `_cwd_root`)
 - Texto normal/argumentos en blanco (`fish_color_normal`, `_param`, `_quote`); comandos y rutas válidas en morado (`fish_color_command`, `_valid_path`); comandos inválidos en rojo real (`fish_color_error`)
-- Carpetas, symlinks y ejecutables en tonos morados via `LS_COLORS`
+- Carpetas, symlinks y ejecutables en tonos morados vía `LS_COLORS`
 - Imagen de Luffy Gear 5 como logo en fastfetch (protocolo gráfico de kitty), con módulos extra (host, kernel, uptime, packages, shell, de, wm, terminal, cpu, gpu, memoria, disco, IP local) en tonos de morado
 - Fondo de kitty `#1e1e1e` con opacidad `0.65`, shell forzado a `/usr/bin/fish`
 - Tema Persona 5 Royal en GRUB
