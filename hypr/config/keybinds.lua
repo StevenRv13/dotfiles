@@ -45,6 +45,7 @@ hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("serpantinum volume raise"), { r
 
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("nautilus"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("serpantinum reload"))
@@ -52,7 +53,7 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("serpantinum msg toggle clipboard"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("serpantinum msg toggle launcher"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("serpantinum msg toggle music"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("serpantinum msg toggle system"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("serpantinum msg toggle system"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("serpantinum msg toggle wallpaper"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("serpantinum msg toggle calendar"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("serpantinum msg toggle network"))

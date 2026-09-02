@@ -170,6 +170,7 @@ Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
 |---|---|
 | `Super + Enter` | Terminal (Kitty) |
 | `Super + F` | Firefox |
+| `Super + B` | Brave |
 | `Super + E` | Gestor de archivos (Nautilus) |
 
 **Panel / Serpantinum**
@@ -180,7 +181,7 @@ Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
 | `Super + C` | Toggle clipboard |
 | `Super + D` | Toggle lanzador de apps |
 | `Super + U` | Toggle música |
-| `Super + B` | Toggle panel de sistema |
+| `Super + Shift + B` | Toggle panel de sistema |
 | `Super + W` | Toggle selector de wallpaper |
 | `Super + S` | Toggle calendario |
 | `Super + N` | Toggle red / WiFi |
