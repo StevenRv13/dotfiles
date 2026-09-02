@@ -7,29 +7,95 @@
     "height": 16
   },
   "display": {
+    "separator": "  ",
     "color": {
-      "title": "#d9a3ff",
-      "keys": "#9d4edd",
       "separator": "#6c5b7b"
     }
   },
   "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "de",
-    "wm",
-    "terminal",
-    "cpu",
-    "gpu",
-    "memory",
-    "disk",
-    "localip",
-    "break"
+    "break",
+    {
+      "type": "title",
+      "format": "{1}",
+      "color": {
+        "user": "#d9a3ff"
+      }
+    },
+    "break",
+    {
+      "type": "os",
+      "key": "󱄅 os",
+      "keyColor": "#d9a3ff"
+    },
+    {
+      "type": "host",
+      "key": "󰟀 host",
+      "keyColor": "#cf9ce6"
+    },
+    {
+      "type": "kernel",
+      "key": " kernel",
+      "keyColor": "#c48ee0"
+    },
+    {
+      "type": "uptime",
+      "key": " uptime",
+      "keyColor": "#b97fd9"
+    },
+    {
+      "type": "packages",
+      "key": " pkgs",
+      "keyColor": "#ae70d3"
+    },
+    {
+      "type": "shell",
+      "key": " sh",
+      "keyColor": "#a361cc"
+    },
+    {
+      "type": "de",
+      "key": " de",
+      "keyColor": "#9d4edd"
+    },
+    {
+      "type": "wm",
+      "key": " wm",
+      "keyColor": "#9d4edd"
+    },
+    {
+      "type": "terminal",
+      "key": " term",
+      "keyColor": "#8c46c4"
+    },
+    {
+      "type": "cpu",
+      "key": " cpu",
+      "keyColor": "#7c3fab"
+    },
+    {
+      "type": "gpu",
+      "key": "󰢮 gpu",
+      "keyColor": "#7c3fab"
+    },
+    {
+      "type": "memory",
+      "key": "󰘚 ram",
+      "keyColor": "#6c5b7b"
+    },
+    {
+      "type": "disk",
+      "key": " disk",
+      "keyColor": "#6c5b7b"
+    },
+    {
+      "type": "localip",
+      "key": " ip",
+      "keyColor": "#6c5b7b"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
   ]
 }

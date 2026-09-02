@@ -15,12 +15,11 @@ Setup personal basado en [ilyamiro/imperative-dots](https://github.com/ilyamiro/
 | Componente | Detalle |
 |---|---|
 | OS | Arch Linux |
-| WM | Hyprland 0.55+ (Wayland) |
+| WM | Hyprland 0.56+ (Wayland), config en Lua (`hl.config`, `hl.bind`) |
 | Terminal | Kitty |
 | Shell | Fish |
-| Bar | Quickshell (incluida en el rice) |
+| Bar / Launcher | Serpantinum (reemplazó a Quickshell) |
 | Fetch | Fastfetch con imagen personalizada |
-| Launcher | incluido en el rice |
 | Font | JetBrains Mono Nerd |
 
 ---
@@ -45,27 +44,30 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ilyamiro/imperative-dots
 
 Durante la instalación:
 - Activar **Configure SDDM Theme**
-- Activar **Zsh Shell Setup**
 - Activar **Download FULL Wallpaper Pack** (opcional)
 - Configurar drivers **NVIDIA** si aplica
 - Ingresar API key de OpenWeatherMap cuando se solicite
 
 > La API key gratuita se obtiene en https://openweathermap.org/api
 
+> El instalador base trae Hyprland con config en **Lua** y la barra **Serpantinum** (ya no Quickshell). No instala Fish por defecto.
+
 ---
 
-### 3. Instalar dependencias adicionales
+### 3. Instalar Fish y dependencias adicionales
 
 ```bash
-sudo pacman -S zsh micro brightnessctl fastfetch v4l2loopback-dkms lazygit
+sudo pacman -S fish micro brightnessctl fastfetch v4l2loopback-dkms lazygit
 yay -S spotify iriunwebcam-bin brave-bin antigravity
+chsh -s /usr/bin/fish
 ```
+
+Cerrá sesión (o reiniciá) para que el shell nuevo tome efecto. Si abrís kitty antes de reiniciar sesión, forzalo explícitamente agregando `shell /usr/bin/fish` en `kitty.conf` (ya incluido en este repo) — evita depender de `$SHELL`, que queda cacheado por la sesión gráfica hasta el próximo login.
 
 Instalar Spicetify:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
-echo 'export PATH=$PATH:~/.spicetify' >> ~/.zshrc
-source ~/.zshrc
+fish -c "fish_add_path ~/.spicetify"
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
 spicetify backup apply
@@ -157,23 +159,22 @@ sudo systemctl enable --now mongodb
 | `Super + N` | Red / WiFi |
 | `Super + V` | Volumen |
 | `Super + U` | Música |
+| `Super + G` | Alternar ventana flotante |
 | `Super + L` | Bloquear pantalla |
 | `Super + H` | Guía de keybinds |
-| `Super + 1-9` | Cambiar workspace |
-| `Super + Shift + 1-9` | Mover ventana a workspace |
+| `Super + 1-9, 0` | Cambiar workspace |
+| `Super + Shift + 1-9, 0` | Mover ventana a workspace |
 | `Print` | Captura de pantalla |
 
 ---
 
 ## 🎨 Personalización aplicada
 
-- Borde de ventana activa en Hyprland: blanco sólido (`#ffffff`)
 - Prompt de fish en tonos morados (`fish_color_user`, `_host`, `_cwd`, `_cwd_root`)
 - Texto normal/argumentos en blanco (`fish_color_normal`, `_param`, `_quote`); comandos y rutas válidas en morado (`fish_color_command`, `_valid_path`); comandos inválidos en rojo real (`fish_color_error`)
 - Carpetas, symlinks y ejecutables en tonos morados via `LS_COLORS`
-- Imagen de Luffy Gear 5 como logo en fastfetch, con etiquetas (`title`/`keys`/`separator`) en distintos tonos de morado
-- Tema blanco/gris en widgets de Quickshell (`qs_colors.json`)
-- Fondo de kitty `#1e1e1e` con opacidad `0.65`
+- Imagen de Luffy Gear 5 como logo en fastfetch (protocolo gráfico de kitty), con módulos extra (host, kernel, uptime, packages, shell, de, wm, terminal, cpu, gpu, memoria, disco, IP local) en tonos de morado
+- Fondo de kitty `#1e1e1e` con opacidad `0.65`, shell forzado a `/usr/bin/fish`
 - Tema Persona 5 Royal en GRUB
 
 ---
