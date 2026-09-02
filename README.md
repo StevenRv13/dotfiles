@@ -145,26 +145,71 @@ sudo systemctl enable --now mongodb
 
 ---
 
-## ⌨️ Keybinds principales
+## ⌨️ Keybinds (todas)
+
+Definidas en `hypr/config/keybinds.lua`. `Super` = tecla Meta/Windows.
+
+**Ventanas**
+
+| Atajo | Acción |
+|---|---|
+| `Super + Q` | Cerrar ventana activa |
+| `Alt + F4` | Cerrar ventana activa (alterno) |
+| `Super + G` | Alternar ventana flotante |
+| `Super + Shift + F` | Alternar ventana flotante (alterno) |
+| `Super + ←/→/↑/↓` | Mover foco entre ventanas |
+| `Super + Ctrl + ←/→/↑/↓` | Mover ventana activa |
+| `Super + Shift + ←/→/↑/↓` (mantenido) | Redimensionar ventana ±50px |
+| `Super + click izq + arrastrar` | Mover ventana |
+| `Super + click der + arrastrar` | Redimensionar ventana |
+| Gesto 3 dedos horizontal (trackpad) | Cambiar workspace |
+
+**Apps**
 
 | Atajo | Acción |
 |---|---|
 | `Super + Enter` | Terminal (Kitty) |
-| `Super + D` | Lanzador de apps |
-| `Super + Q` | Cerrar ventana |
 | `Super + F` | Firefox |
-| `Super + E` | Gestor de archivos |
-| `Super + W` | Cambiar wallpaper |
-| `Super + S` | Calendario / Clima |
-| `Super + N` | Red / WiFi |
-| `Super + V` | Volumen |
-| `Super + U` | Música |
-| `Super + G` | Alternar ventana flotante |
+| `Super + E` | Gestor de archivos (Nautilus) |
+
+**Panel / Serpantinum**
+
+| Atajo | Acción |
+|---|---|
+| `Super + R` | Recargar Serpantinum |
+| `Super + C` | Toggle clipboard |
+| `Super + D` | Toggle lanzador de apps |
+| `Super + U` | Toggle música |
+| `Super + B` | Toggle panel de sistema |
+| `Super + W` | Toggle selector de wallpaper |
+| `Super + S` | Toggle calendario |
+| `Super + N` | Toggle red / WiFi |
+| `Super + V` | Toggle volumen |
+| `Super + H` | Toggle guía de keybinds |
+
+**Workspaces**
+
+| Atajo | Acción |
+|---|---|
+| `Super + 1..9, 0` | Ir a workspace 1–10 |
+| `Super + Shift + 1..9, 0` | Mover ventana activa a workspace 1–10 |
+
+**Sistema / multimedia**
+
+| Atajo | Acción |
+|---|---|
 | `Super + L` | Bloquear pantalla |
-| `Super + H` | Guía de keybinds |
-| `Super + 1-9, 0` | Cambiar workspace |
-| `Super + Shift + 1-9, 0` | Mover ventana a workspace |
-| `Print` | Captura de pantalla |
+| `XF86PowerOff` | Bloquear pantalla |
+| `Super + Space` | Play/pause |
+| `XF86AudioPlay` / `XF86AudioPause` | Play/pause |
+| `XF86AudioMicMute` | Mute micrófono |
+| `XF86AudioMute` | Mute salida |
+| `XF86AudioLowerVolume` / `XF86AudioRaiseVolume` | Volumen ± |
+| `XF86MonBrightnessDown` / `XF86MonBrightnessUp` | Brillo ± |
+| `Print` | Captura de pantalla (selección) |
+| `Shift + Print` | Captura + editar |
+| `Super + Print` | Captura pantalla completa |
+| `Super + Shift + Print` | Captura pantalla completa + editar |
 
 ---
 
