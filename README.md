@@ -41,7 +41,7 @@
 | Shell | Fish |
 | Bar / Launcher | Serpantinum (reemplazó a Quickshell) |
 | Fetch | Fastfetch con imagen personalizada |
-| Font | JetBrains Mono Nerd |
+| Font | `JetBrainsMono Nerd Font Mono` (paquete `ttf-jetbrains-mono-nerd`) |
 
 ---
 
@@ -95,12 +95,14 @@ Durante la instalación:
 ### 3. Instalar Fish y dependencias adicionales
 
 ```bash
-sudo pacman -S fish micro brightnessctl fastfetch v4l2loopback-dkms lazygit
+sudo pacman -S fish micro brightnessctl fastfetch v4l2loopback-dkms lazygit ttf-jetbrains-mono-nerd
 yay -S spotify iriunwebcam-bin brave-bin antigravity
 chsh -s /usr/bin/fish
 ```
 
 Cerrá sesión (o reiniciá) para que el shell nuevo tome efecto. Si abrís kitty antes de reiniciar sesión, forzalo explícitamente agregando `shell /usr/bin/fish` en `kitty.conf` (ya incluido en este repo) — evita depender de `$SHELL`, que queda cacheado por la sesión gráfica hasta el próximo login.
+
+> ⚠️ El paquete `ttf-jetbrains-mono-nerd` registra la familia como **`JetBrainsMono Nerd Font Mono`** (sin espacio entre JetBrains y Mono), no `JetBrains Mono`. Si usás ese nombre con espacio en `kitty.conf` o en `hypr/config/settings.lua`, cae a una fuente de respaldo sin los íconos y varios símbolos salen como `?`. Este repo ya usa el nombre correcto.
 
 Instalar Spicetify:
 ```bash
