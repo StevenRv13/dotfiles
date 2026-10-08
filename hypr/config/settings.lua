@@ -24,8 +24,8 @@ hl.config({
   },
 
   input = {
-    kb_layout = "us,es",
-    kb_options = "grp:win_space_toggle",
+    kb_layout = "us",
+    kb_options = "grp:alt_shift_toggle",
     accel_profile = "flat",
     touchpad = {
       natural_scroll = true,
@@ -35,7 +35,7 @@ hl.config({
 
   misc = {
     focus_on_activate = false,
-    font_family = "JetBrainsMono Nerd Font Mono",
+    font_family = "JetBrains Mono",
     disable_hyprland_logo = true,
     disable_splash_rendering = true,
   },

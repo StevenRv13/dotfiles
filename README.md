@@ -58,9 +58,10 @@ dotfiles/
 │       ├── env.lua
 │       ├── autostart.lua
 │       └── monitors.lua
-├── kitty/                  # terminal (opacidad, colores matugen, shell fish forzado)
-├── fastfetch/               # logo Luffy + paleta morada
+├── kitty/                  # terminal (fuente, colores y apariencia)
+├── fastfetch/              # resumen compacto del sistema
 ├── fish/                    # shell config + fisher, z, fzf, sponge
+├── color-options/           # presets alternativos para Fish y Fastfetch
 └── *.png                    # wallpapers/imágenes usadas por fastfetch
 ```
 
@@ -102,7 +103,7 @@ chsh -s /usr/bin/fish
 
 Cerrá sesión (o reiniciá) para que el shell nuevo tome efecto. Si abrís kitty antes de reiniciar sesión, forzalo explícitamente agregando `shell /usr/bin/fish` en `kitty.conf` (ya incluido en este repo) — evita depender de `$SHELL`, que queda cacheado por la sesión gráfica hasta el próximo login.
 
-> ⚠️ El paquete `ttf-jetbrains-mono-nerd` registra la familia como **`JetBrainsMono Nerd Font Mono`** (sin espacio entre JetBrains y Mono), no `JetBrains Mono`. Si usás ese nombre con espacio en `kitty.conf` o en `hypr/config/settings.lua`, cae a una fuente de respaldo sin los íconos y varios símbolos salen como `?`. Este repo ya usa el nombre correcto.
+La configuración actual usa la familia **`JetBrains Mono`** tanto en Kitty como en Hyprland.
 
 Instalar Spicetify:
 ```bash
@@ -234,7 +235,6 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 |---|---|
 | `Super + L` | Bloquear pantalla |
 | `XF86PowerOff` | Bloquear pantalla |
-| `Super + Space` | Play/pause |
 | `XF86AudioPlay` / `XF86AudioPause` | Play/pause |
 | `XF86AudioMicMute` | Mute micrófono |
 | `XF86AudioMute` | Mute salida |
@@ -249,11 +249,11 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 
 ## 🎨 Personalización aplicada
 
-- Prompt de fish en tonos morados (`fish_color_user`, `_host`, `_cwd`, `_cwd_root`)
-- Texto normal/argumentos en blanco (`fish_color_normal`, `_param`, `_quote`); comandos y rutas válidas en morado (`fish_color_command`, `_valid_path`); comandos inválidos en rojo real (`fish_color_error`)
-- Carpetas, symlinks y ejecutables en tonos morados vía `LS_COLORS`
-- Imagen de Luffy Gear 5 como logo en fastfetch (protocolo gráfico de kitty), con módulos extra (host, kernel, uptime, packages, shell, de, wm, terminal, cpu, gpu, memoria, disco, IP local) en tonos de morado
-- Fondo de kitty `#1e1e1e` con opacidad `0.65`, shell forzado a `/usr/bin/fish`
+- Prompt de Fish en tonos blanco, violeta, magenta y rojo
+- Comandos, rutas, carpetas, symlinks y ejecutables coloreados mediante las variables de Fish y `LS_COLORS`
+- Fastfetch compacto con logo pequeño y módulos de OS, CPU, memoria y shell
+- Kitty con `JetBrains Mono` a 16 pt, fondo opaco y colores cargados desde `colors.conf`
+- Tres combinaciones de color alternativas en `color-options/`
 - Tema Persona 5 Royal en GRUB
 
 ---

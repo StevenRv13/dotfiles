@@ -1,0 +1,105 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "/home/steven/Pictures/Monkey-D-Luffy-Gear-5-PNG.png",
+    "width": 30,
+    "height": 16
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "separator": "#996633"
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": "{1}",
+      "color": {
+        "user": "#ffd700"
+      }
+    },
+    "break",
+    // Identidad -> naranja
+    {
+      "type": "os",
+      "key": "󱄅 os",
+      "keyColor": "#ff8c00"
+    },
+    {
+      "type": "host",
+      "key": "󰟀 host",
+      "keyColor": "#ff7f00"
+    },
+    {
+      "type": "kernel",
+      "key": " kernel",
+      "keyColor": "#ff6600"
+    },
+    // Entorno -> dorado
+    {
+      "type": "shell",
+      "key": " sh",
+      "keyColor": "#ffd700"
+    },
+    {
+      "type": "de",
+      "key": " de",
+      "keyColor": "#f0c808"
+    },
+    {
+      "type": "wm",
+      "key": " wm",
+      "keyColor": "#f0c808"
+    },
+    {
+      "type": "terminal",
+      "key": " term",
+      "keyColor": "#e6b800"
+    },
+    // Hardware -> rojo
+    {
+      "type": "cpu",
+      "key": " cpu",
+      "keyColor": "#ff3300"
+    },
+    {
+      "type": "gpu",
+      "key": "󰢮 gpu",
+      "keyColor": "#ff3300"
+    },
+    {
+      "type": "memory",
+      "key": "󰘚 ram",
+      "keyColor": "#e62e00"
+    },
+    {
+      "type": "disk",
+      "key": " disk",
+      "keyColor": "#cc3300"
+    },
+    // Red / misc -> cobre apagado
+    {
+      "type": "uptime",
+      "key": " uptime",
+      "keyColor": "#cc7a29"
+    },
+    {
+      "type": "packages",
+      "key": " pkgs",
+      "keyColor": "#b8691f"
+    },
+    {
+      "type": "localip",
+      "key": " ip",
+      "keyColor": "#a65c1a"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}
