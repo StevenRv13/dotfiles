@@ -2,7 +2,7 @@
 
 # Steven's Dotfiles
 
-**Arch Linux + Hyprland**, basado en [ilyamiro/imperative-dots](https://github.com/ilyamiro/imperative-dots) con personalizaciones propias.
+**Arch Linux + Hyprland**, basado en [ilyamiro/serpantinum](https://github.com/ilyamiro/serpantinum) con personalizaciones propias.
 
 ![Arch Linux](https://img.shields.io/badge/OS-Arch%20Linux-1793D1?logo=archlinux&logoColor=white)
 ![Hyprland](https://img.shields.io/badge/WM-Hyprland-58E1FF?logo=wayland&logoColor=white)
@@ -77,10 +77,10 @@ archinstall
 
 Perfil recomendado: **minimal** o **Hyprland** directo.
 
-### 2. Instalar el rice base (ilyamiro)
+### 2. Instalar Serpantinum (ilyamiro)
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ilyamiro/imperative-dots/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ilyamiro/serpantinum/master/install/install.sh)"
 ```
 
 Durante la instalación:
