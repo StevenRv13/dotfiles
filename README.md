@@ -21,6 +21,7 @@
 - [Instalación desde cero](#instalación-desde-cero)
 - [Keybinds](#keybinds)
 - [Personalización aplicada](#personalización-aplicada)
+- [Solución de problemas](docs/troubleshooting-hyprland.md)
 - [Actualizar dotfiles](#actualizar-dotfiles)
 
 ---
