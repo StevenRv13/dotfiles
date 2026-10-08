@@ -15,13 +15,13 @@
 
 ## Índice
 
-- [Preview](#-preview)
-- [Sistema](#️-sistema)
-- [Estructura del repo](#-estructura-del-repo)
-- [Instalación desde cero](#️-instalación-desde-cero)
-- [Keybinds](#️-keybinds)
-- [Personalización aplicada](#-personalización-aplicada)
-- [Actualizar dotfiles](#-actualizar-dotfiles)
+- [Preview](#preview)
+- [Sistema](#sistema)
+- [Estructura del repo](#estructura-del-repo)
+- [Instalación desde cero](#instalación-desde-cero)
+- [Keybinds](#keybinds)
+- [Personalización aplicada](#personalización-aplicada)
+- [Actualizar dotfiles](#actualizar-dotfiles)
 
 ---
 
