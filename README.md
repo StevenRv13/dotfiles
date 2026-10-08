@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏴‍☠️ Steven's Dotfiles
+# Steven's Dotfiles
 
 **Arch Linux + Hyprland**, basado en [ilyamiro/imperative-dots](https://github.com/ilyamiro/imperative-dots) con personalizaciones propias.
 
@@ -13,7 +13,7 @@
 
 ---
 
-## 📑 Índice
+## Índice
 
 - [Preview](#-preview)
 - [Sistema](#️-sistema)
@@ -25,13 +25,13 @@
 
 ---
 
-## 📸 Preview
+## Preview
 
 > Hyprland + Kitty + Fastfetch con Luffy Gear 5 + tema morado/blanco
 
 ---
 
-## 🖥️ Sistema
+## Sistema
 
 | Componente | Detalle |
 |---|---|
@@ -45,7 +45,7 @@
 
 ---
 
-## 📁 Estructura del repo
+## Estructura del repo
 
 ```
 dotfiles/
@@ -67,7 +67,7 @@ dotfiles/
 
 ---
 
-## ⚙️ Instalación desde cero
+## Instalación desde cero
 
 ### 1. Instalar Arch Linux base con archinstall
 
@@ -89,9 +89,9 @@ Durante la instalación:
 - Configurar drivers **NVIDIA** si aplica
 - Ingresar API key de OpenWeatherMap cuando se solicite
 
-> 🔑 La API key gratuita se obtiene en https://openweathermap.org/api
+> La API key gratuita se obtiene en https://openweathermap.org/api
 
-> ℹ️ El instalador base trae Hyprland con config en **Lua** y la barra **Serpantinum** (ya no Quickshell). No instala Fish por defecto.
+> El instalador base trae Hyprland con config en **Lua** y la barra **Serpantinum** (ya no Quickshell). No instala Fish por defecto.
 
 ### 3. Instalar Fish y dependencias adicionales
 
@@ -180,7 +180,7 @@ sudo systemctl enable --now mongodb
 
 ---
 
-## ⌨️ Keybinds
+## Keybinds
 
 Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = tecla Meta/Windows.
 
@@ -247,7 +247,7 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 
 ---
 
-## 🎨 Personalización aplicada
+## Personalización aplicada
 
 - Prompt de Fish en tonos blanco, violeta, magenta y rojo
 - Comandos, rutas, carpetas, symlinks y ejecutables coloreados mediante las variables de Fish y `LS_COLORS`
@@ -258,7 +258,7 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 
 ---
 
-## 🔄 Actualizar dotfiles
+## Actualizar dotfiles
 
 Después de hacer cambios:
 
