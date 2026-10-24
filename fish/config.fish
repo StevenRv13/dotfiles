@@ -14,8 +14,8 @@ set fish_color_error ff0044
 set -x LS_COLORS "di=38;2;199;125;255:fi=0:ln=38;2;255;0;255:ex=38;2;106;0;255"
 fastfetch
 
-fish_add_path /home/steven/.spicetify
+fish_add_path "$HOME/.spicetify"
 
 
 # Added by Antigravity CLI installer
-set -gx PATH "/home/steven/.local/bin" $PATH
+fish_add_path "$HOME/.local/bin"

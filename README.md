@@ -2,7 +2,7 @@
 
 # Steven's Dotfiles
 
-**Arch Linux + Hyprland**, basado en [ilyamiro/serpantinum](https://github.com/ilyamiro/serpantinum) con personalizaciones propias.
+**Arch Linux + Hyprland**, basado en [ilyamiro/serpantinum](https://github.com/ilyamiro/serpantinum), con una instalación reproducible y personalizaciones propias.
 
 ![Arch Linux](https://img.shields.io/badge/OS-Arch%20Linux-1793D1?logo=archlinux&logoColor=white)
 ![Hyprland](https://img.shields.io/badge/WM-Hyprland-58E1FF?logo=wayland&logoColor=white)
@@ -40,7 +40,7 @@
 | WM | Hyprland 0.56+ (Wayland), config en Lua (`hl.config`, `hl.bind`) |
 | Terminal | Kitty |
 | Shell | Fish |
-| Bar / Launcher | Serpantinum (reemplazó a Quickshell) |
+| Bar / Launcher | Serpantinum con preset Obsidian personalizado |
 | Fetch | Fastfetch con imagen personalizada |
 | Font | `JetBrainsMono Nerd Font Mono` (paquete `ttf-jetbrains-mono-nerd`) |
 
@@ -62,7 +62,15 @@ dotfiles/
 ├── kitty/                  # terminal (fuente, colores y apariencia)
 ├── fastfetch/              # resumen compacto del sistema
 ├── fish/                    # shell config + fisher, z, fzf, sponge
+├── bash/                    # shell de respaldo
+├── btop/                    # monitor de recursos
+├── cava/                    # visualizador de audio y shaders
+├── fuzzel/                  # launcher y paleta de colores
+├── gtk-3.0/ y gtk-4.0/      # estilos visuales de aplicaciones
+├── serpantinum/             # barra, dock, launcher y tema sanitizado
 ├── color-options/           # presets alternativos para Fish y Fastfetch
+├── install.sh               # instalación con backup automático
+├── packages.txt             # dependencias oficiales de Arch
 └── *.png                    # wallpapers/imágenes usadas por fastfetch
 ```
 
@@ -94,15 +102,18 @@ Durante la instalación:
 
 > El instalador base trae Hyprland con config en **Lua** y la barra **Serpantinum** (ya no Quickshell). No instala Fish por defecto.
 
-### 3. Instalar Fish y dependencias adicionales
+### 3. Clonar e instalar la configuración
 
 ```bash
-sudo pacman -S fish micro brightnessctl fastfetch v4l2loopback-dkms lazygit ttf-jetbrains-mono-nerd
-yay -S spotify iriunwebcam-bin brave-bin antigravity
+git clone https://github.com/StevenRv13/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh --packages
 chsh -s /usr/bin/fish
 ```
 
-Cerrá sesión (o reiniciá) para que el shell nuevo tome efecto. Si abrís kitty antes de reiniciar sesión, forzalo explícitamente agregando `shell /usr/bin/fish` en `kitty.conf` (ya incluido en este repo) — evita depender de `$SHELL`, que queda cacheado por la sesión gráfica hasta el próximo login.
+El instalador enlaza las configuraciones desde el repo y respalda cualquier archivo anterior en `~/.dotfiles-backup-FECHA/`. Se puede ejecutar sin `--packages` si las dependencias ya están instaladas. No sobrescribe secretos ni guarda el estado generado de Fish.
+
+Cerrá sesión (o reiniciá) después de `chsh`. Kitty usará el shell predeterminado de la sesión.
 
 La configuración actual usa la familia **`JetBrains Mono`** tanto en Kitty como en Hyprland.
 
@@ -115,29 +126,17 @@ sudo chmod a+wr /opt/spotify/Apps -R
 spicetify backup apply
 ```
 
-### 4. Aplicar dotfiles personalizados
-
-```bash
-git clone https://github.com/StevenRv13/dotfiles.git
-cp -r dotfiles/hypr ~/.config/
-cp -r dotfiles/kitty ~/.config/
-cp -r dotfiles/fastfetch ~/.config/
-cp -r dotfiles/fish ~/.config/
-cp dotfiles/luffy.png ~/Pictures/
-cp dotfiles/Monkey-D-Luffy-Gear-5-PNG.png ~/Pictures/
-```
-
 <details>
-<summary><b>5-8. Pasos opcionales</b> (zona horaria, firewall, dual boot, bases de datos)</summary>
+<summary><b>4-7. Pasos opcionales</b> (zona horaria, firewall, dual boot, bases de datos)</summary>
 
-### 5. Configurar zona horaria y sincronización
+### 4. Configurar zona horaria y sincronización
 
 ```bash
 sudo timedatectl set-timezone America/Costa_Rica
 sudo systemctl enable --now systemd-timesyncd
 ```
 
-### 6. Configurar firewall (UFW)
+### 5. Configurar firewall (UFW)
 
 ```bash
 sudo pacman -S ufw
@@ -155,7 +154,7 @@ sudo ufw allow 3000   # ejemplo: servidor Node.js
 sudo ufw deny 3000    # para cerrarlo de nuevo
 ```
 
-### 7. Agregar Windows al GRUB (dual boot)
+### 6. Agregar Windows al GRUB (dual boot)
 
 ```bash
 sudo pacman -S os-prober
@@ -164,7 +163,7 @@ sudo nano /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-### 8. Instalar bases de datos (desarrollo)
+### 7. Instalar bases de datos (desarrollo)
 
 ```bash
 # PostgreSQL
@@ -253,7 +252,8 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 - Prompt de Fish en tonos blanco, violeta, magenta y rojo
 - Comandos, rutas, carpetas, symlinks y ejecutables coloreados mediante las variables de Fish y `LS_COLORS`
 - Fastfetch compacto con logo pequeño y módulos de OS, CPU, memoria y shell
-- Kitty con `JetBrains Mono` a 16 pt, fondo opaco y colores cargados desde `colors.conf`
+- Kitty con `JetBrains Mono` a 16 pt, fondo semitransparente y paleta monocromática cargada desde `colors.conf`
+- Serpantinum, Cava, Fuzzel y estilos GTK coordinados con la misma paleta
 - Tres combinaciones de color alternativas en `color-options/`
 - Tema Persona 5 Royal en GRUB
 
@@ -261,15 +261,14 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 
 ## Actualizar dotfiles
 
-Después de hacer cambios:
+Como las configuraciones quedan enlazadas al repo, los cambios hechos en `~/.config` aparecen directamente en Git:
 
 ```bash
 cd ~/dotfiles
-cp -r ~/.config/hypr .
-cp -r ~/.config/kitty .
-cp -r ~/.config/fish .
-cp -r ~/.config/fastfetch .
+git status
 git add .
 git commit -m "descripción del cambio"
 git push
 ```
+
+No agregués tokens, claves API, archivos de sesión ni `fish_variables`.

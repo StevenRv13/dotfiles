@@ -1,0 +1,204 @@
+{
+  "general": {
+    "language": "es",
+    "avatarPath": "",
+    "muteSfx": false,
+    "weatherInterval": 1,
+    "weatherUnit": "metric",
+    "sfxVolume": 100,
+    "quickactions": true,
+    "location": {},
+    "screenshotCaptureOnRelease": false
+  },
+  "syspanel": {
+    "clipExpandProgress": 0,
+    "clipExpanded": false,
+    "clipState": 1
+  },
+  "bar": {
+    "position": "top",
+    "width": 100,
+    "opacity": 100,
+    "style": "modular",
+    "time": {
+      "format": "hh:mm:ss AP"
+    },
+    "autohide": false,
+    "autohideTimeout": 1000,
+    "modules": {
+      "left": [
+        "media",
+        "timedate"
+      ],
+      "center": [
+        "workspaces",
+        "info"
+      ],
+      "right": [
+        [
+          "tray",
+          "sysmon",
+          "kb",
+          "bat",
+          "wifi",
+          "vol"
+        ]
+      ]
+    },
+    "workspaceCount": 5,
+    "groupColors": {
+      "g_timedate": "#d0d0d0",
+      "g_kb": "#e0e0e0",
+      "g_tray": "#cba6f7"
+    },
+    "distinctPills": false
+  },
+  "theme": {
+    "fontFamily": "Google Sans",
+    "borderRadius": 21,
+    "activePreset": "Obsidian",
+    "matugen": false,
+    "colors": {
+      "base": "#000000",
+      "blue": "#ffffff",
+      "crust": "#000000",
+      "green": "#ffffff",
+      "mantle": "#050505",
+      "maroon": "#808080",
+      "mauve": "#d0d0d0",
+      "overlay0": "#5a5a5a",
+      "overlay1": "#7a7a7a",
+      "overlay2": "#9a9a9a",
+      "peach": "#cccccc",
+      "pink": "#e0e0e0",
+      "red": "#a0a0a0",
+      "sapphire": "#e0e0e0",
+      "subtext0": "#a0a0a0",
+      "subtext1": "#c0c0c0",
+      "surface0": "#1a1a1a",
+      "surface1": "#2a2a2a",
+      "surface2": "#3a3a3a",
+      "teal": "#c0c0c0",
+      "text": "#ffffff",
+      "yellow": "#ffffff"
+    }
+  },
+  "idle": {
+    "enabled": false,
+    "actions": {
+      "dim": {
+        "id": "dim",
+        "timeout": 150,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "dpms": {
+        "id": "dpms",
+        "timeout": 450,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "lock": {
+        "id": "lock",
+        "timeout": 300,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "suspend": {
+        "id": "suspend",
+        "timeout": 600,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      }
+    },
+    "manualInhibit": false
+  },
+  "notifications": {
+    "dnd": true,
+    "position": "top center",
+    "sound": true,
+        "soundFile": "__HOME__/.local/share/serpantinum/src/assets/sounds/notifications/Progress.wav",
+    "horizontalPosition": 50,
+    "verticalPosition": 7
+  },
+  "display": {
+    "monitors": {}
+  },
+  "launcher": {
+    "position": "top",
+    "width": 650,
+    "itemCount": 10,
+    "terminalCommand": "kitty -e",
+    "smartRanking": true
+  },
+  "dock": {
+    "enabled": true,
+    "position": "bottom",
+    "onTop": true,
+    "elementSize": 42,
+    "floating": true,
+    "opacity": 100,
+    "exclusive": true,
+    "autohide": false,
+    "smartAutohide": true,
+    "autohideTimeout": 1000,
+    "editing": false,
+    "apps": [
+      {
+        "name": "Brave",
+        "comment": "Access the Internet",
+        "desktop_id": "brave-browser",
+        "icon": "brave-desktop"
+      },
+      {
+        "name": "Android Studio",
+        "comment": "The official Android IDE",
+        "desktop_id": "android-studio",
+        "icon": "android-studio"
+      },
+      {
+        "name": "Antigravity IDE",
+        "comment": "Experience liftoff",
+        "desktop_id": "antigravity-ide",
+        "icon": "antigravity-ide"
+      },
+      {
+        "name": "Dolphin",
+        "comment": "Manage your files",
+        "desktop_id": "org.kde.dolphin",
+        "icon": "org.kde.dolphin"
+      }
+    ],
+    "overrideBoundsCorrection": false,
+    "enableScrolling": false,
+    "visibleElements": 7,
+    "hoverScale": 110,
+    "cascadeScale": false,
+    "background": true
+  },
+  "wallpaperDir": "__HOME__/Pictures/Wallpapers",
+  "lockscreen": {
+    "fingerprintEnabled": true,
+    "attemptLimitEnabled": false,
+    "passwordMaxAttempts": 5,
+    "fingerprintMaxAttempts": 5,
+    "backgroundMode": "follow",
+    "customBackground": ""
+  }
+}

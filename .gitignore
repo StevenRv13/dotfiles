@@ -1,0 +1,11 @@
+# Estado local o generado por las aplicaciones
+fish/fish_variables
+serpantinum/settings.json.lock
+
+# Respaldos creados por el instalador si el repo vive dentro de HOME
+.dotfiles-backup-*/
+
+# Archivos temporales
+*.bak
+*.tmp
+*~

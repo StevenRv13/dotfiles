@@ -1,0 +1,12 @@
+git
+fish
+kitty
+fastfetch
+fzf
+fd
+bat
+btop
+cava
+fuzzel
+noto-fonts
+ttf-jetbrains-mono-nerd
