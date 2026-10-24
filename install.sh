@@ -32,9 +32,17 @@ if [[ "$install_packages" == true ]]; then
   fi
 
   sudo pacman -S --needed \
-    git fish kitty fastfetch fzf fd bat btop cava fuzzel \
+    git git-lfs fish kitty fastfetch fzf fd bat btop cava fuzzel \
     noto-fonts ttf-jetbrains-mono-nerd
 fi
+
+if ! git lfs version >/dev/null 2>&1; then
+  echo "Falta Git LFS. Instálalo con: sudo pacman -S git-lfs" >&2
+  exit 1
+fi
+
+git -C "$repo_dir" lfs install --local
+git -C "$repo_dir" lfs pull
 
 backup_path() {
   local target="$1"
@@ -104,6 +112,12 @@ for image in luffy.png Monkey-D-Luffy-Gear-5-PNG.png; do
   fi
   install -m 644 "$repo_dir/$image" "$image_target"
 done
+
+wallpaper_target_dir="$HOME/Pictures/Wallpapers"
+mkdir -p "$wallpaper_target_dir"
+while IFS= read -r -d '' wallpaper; do
+  link_path "$wallpaper" "$wallpaper_target_dir/$(basename -- "$wallpaper")"
+done < <(find "$repo_dir/wallpapers/videos" -maxdepth 1 -type f -print0)
 
 echo
 echo "Dotfiles instalados. Para usar Fish como shell predeterminado:"

@@ -68,6 +68,7 @@ dotfiles/
 ├── fuzzel/                  # launcher y paleta de colores
 ├── gtk-3.0/ y gtk-4.0/      # estilos visuales de aplicaciones
 ├── serpantinum/             # barra, dock, launcher y tema sanitizado
+├── wallpapers/videos/       # fondos animados administrados con Git LFS
 ├── color-options/           # presets alternativos para Fish y Fastfetch
 ├── install.sh               # instalación con backup automático
 ├── packages.txt             # dependencias oficiales de Arch
@@ -111,7 +112,7 @@ cd ~/dotfiles
 chsh -s /usr/bin/fish
 ```
 
-El instalador enlaza las configuraciones desde el repo y respalda cualquier archivo anterior en `~/.dotfiles-backup-FECHA/`. Se puede ejecutar sin `--packages` si las dependencias ya están instaladas. No sobrescribe secretos ni guarda el estado generado de Fish.
+El instalador enlaza las configuraciones desde el repo y respalda cualquier archivo anterior en `~/.dotfiles-backup-FECHA/`. Se puede ejecutar sin `--packages` si las dependencias ya están instaladas. No sobrescribe secretos ni guarda el estado generado de Fish. Los fondos animados ocupan aproximadamente 1,3 GB y se descargan mediante Git LFS.
 
 Cerrá sesión (o reiniciá) después de `chsh`. Kitty usará el shell predeterminado de la sesión.
 
@@ -254,6 +255,7 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 - Fastfetch compacto con logo pequeño y módulos de OS, CPU, memoria y shell
 - Kitty con `JetBrains Mono` a 16 pt, fondo semitransparente y paleta monocromática cargada desde `colors.conf`
 - Serpantinum, Cava, Fuzzel y estilos GTK coordinados con la misma paleta
+- 23 fondos animados MP4 enlazados automáticamente en `~/Pictures/Wallpapers`
 - Tres combinaciones de color alternativas en `color-options/`
 - Tema Persona 5 Royal en GRUB
 
