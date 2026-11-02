@@ -250,13 +250,13 @@ Definidas en [`hypr/config/keybinds.lua`](hypr/config/keybinds.lua). `Super` = t
 
 ## Personalización aplicada
 
-- Prompt de Fish en tonos blanco, violeta, magenta y rojo
+- Prompt de Fish en rojo neón con errores en cian para distinguirlos
 - Comandos, rutas, carpetas, symlinks y ejecutables coloreados mediante las variables de Fish y `LS_COLORS`
 - Fastfetch compacto con logo pequeño y módulos de OS, CPU, memoria y shell
 - Kitty con `JetBrains Mono` a 16 pt, fondo semitransparente y paleta monocromática cargada desde `colors.conf`
 - Serpantinum, Cava, Fuzzel y estilos GTK coordinados con la misma paleta
 - 23 fondos animados MP4 enlazados automáticamente en `~/Pictures/Wallpapers`
-- Tres combinaciones de color alternativas en `color-options/`
+- Cuatro combinaciones de color alternativas en `color-options/` (cálido, azul cromado, morado y rojo neón)
 - Tema Persona 5 Royal en GRUB
 
 ---
